@@ -65,17 +65,17 @@ The .h backend allows for adaptive selection of hidden-layer and last-layer acti
 
 For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 output node (classification), 1 hidden layer with 10 nodes, tanh activation function on hidden layer, and linear/sign transformation on output layer. Weights are randomly initialized then learned through backpropagation.
 
--**VLR-GD**:
+- **VLR-GD**:
   - No regularization or validation
--**SGD**:
+- **SGD**:
   - No regularization or validation
--**VLR-GD-WD**:
+- **VLR-GD-WD**:
   - Regularization parameter lambda set to 0.01 / N with N = size of training data
   - Stopping criteria set to 1e-6
--**SGD-WD**:
+- **SGD-WD**:
   - Regularization parameter lambda set to 0.01 / N
   - Initial epsilon-decay value set to 0.01
--**VLR-GD-ES**:
+- **VLR-GD-ES**:
   - Training set of size 250, validation set of size 50
   - Initial epsilon-decay value set to 0.01
   - alpha = 1.05 (parameter to speed up gradient descent if weights are positively updated)
