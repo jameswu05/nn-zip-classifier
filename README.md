@@ -9,21 +9,16 @@ The US Post Office Zip Code data is used for all digits classification, 0-9. The
 We define symmetry and intensity features below.
 
 **Symmetry:**
-
 $$
 \text{Symmetry} = -\frac{1}{d} \sum_{i = 1}^d \big(|x_i - F(x)_i| + |x_i - G(x)_i|\big)
 $$
-
 where \(d = 256\) pixels, \(F(x)\) is the vertical flip of pixel \(x\), and \(G(x)\) is the horizontal flip of pixel \(x\).
 
 **Intensity:**
-
 $$
 \text{Intensity} = \frac{1}{d} \sum_{i = 1}^d \frac{B(x_i)}{d}
 $$
-
 where \(d = 256\) and 
-
 $$
 B(x) = 
 \begin{cases}
