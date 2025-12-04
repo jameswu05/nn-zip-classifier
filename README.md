@@ -90,7 +90,7 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
 
 ## Directory Structure
 
-'''
+```
 project/
 ├── data/                           # CSV logs & grid predictions
 │   ├── errors_sgd.csv
@@ -147,4 +147,4 @@ project/
     ├── train_digits_weight_decay.cpp
     ├── ZipDigitsRandom.test
     └── ZipDigitsRandom.train
-'''
+```
