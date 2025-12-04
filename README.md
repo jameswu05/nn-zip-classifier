@@ -31,3 +31,26 @@ B(x) =
 -1, & \text{if $x$ is not black}
 \end{cases}
 $$
+
+The data is stored in src, and each row of ZipDigitsRandom.test and ZipDigitsRandom.train is of the format (label, symmetry, intensity).
+
+## Features
+- **Hidden Layer Activations**:
+  - tanh (FP only) and tanh derivative (BP only)
+  - identity (FP only) and identity derivative (BP only)
+  - sign (FP only) and sign derivative (BP only)
+- **Last Layer Activations**:
+  - tanh (FP only) and tanh derivative (BP only)
+  - identity (FP only) and identity derivative (BP only)
+  - sign (FP only) and sign derivative (BP only)
+- **Gradient Descent Algorithms**:
+  - Variable Learning Rate Gradient Descent (VLR-GD): 2 million iterations
+  - Stochastic Gradient Descent (SGD): 20 million SGD updates
+  - Variable Learning Rate Gradient Descent with Weight Decay Regularization (VLR-GD-WD)
+  - Stochastic Gradient Descent with Weight Decay Regularization (SGD-WD)
+  - Variable Learning Rate Gradient Descent with Early Stopping Regularization
+    - Utilized a training/validation split of 250 training, 50 validation
+  - Stochastic Gradient Descent with Early Stopping Regularization
+    - Similarly utilized a training/validation split of 250 training, 50 validation
+### Modularity
+The .h backend allows for adaptive selection of hidden-layer and last-layer activations and de-activations, number of iterations, and choice of regularization. Hyperparameters are not optimized so that is left to the user's discretion. 
