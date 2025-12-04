@@ -91,57 +91,60 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
 ## Directory Structure
 
 '''
-+---data
-|       errors_sgd.csv
-|       errors_sgd_es.csv
-|       errors_sgd_wd.csv
-|       errors_var.csv
-|       errors_var_es.csv
-|       errors_var_wd.csv
-|       grid_predictions_SGD.csv
-|       grid_predictions_SGDES.csv
-|       grid_predictions_SGDWD.csv
-|       grid_predictions_VLRGD.csv
-|       grid_predictions_VLRGDES.csv
-|       grid_predictions_VLRGDWD.csv
-|       val_errors_sgd_es.csv
-|       val_errors_var_es.csv
-|
-+---exec
-|       train_digits
-|       train_digits_early_stopping
-|       train_digits_sgd
-|       train_digits_sgd_early_stopping
-|       train_digits_sgd_weight_decay
-|       train_digits_weight_decay
-|
-+---plots
-|       decision_boundary_sgd.png
-|       decision_boundary_sgd_es.png
-|       decision_boundary_sgd_wd.png
-|       decision_boundary_var.png
-|       decision_boundary_var_es.png
-|       decision_boundary_var_wd.png
-|       errors_sgd.png
-|       errors_sgd_es.png
-|       errors_sgd_wd.png
-|       errors_var_lr_gd.png
-|       errors_var_lr_gd_es.png
-|       errors_var_lr_gd_wd.png
-|
-\---src
-        helper_functions.cpp
-        layers.h
-        main.cpp
-        nn.h
-        plot_decision_boundary.py
-        plot_errors.py
-        train_digits.cpp
-        train_digits_early_stopping.cpp
-        train_digits_sgd.cpp
-        train_digits_sgd_early_stopping.cpp
-        train_digits_sgd_weight_decay.cpp
-        train_digits_weight_decay.cpp
-        ZipDigitsRandom.test
-        ZipDigitsRandom.train
+project/
+├── data/                           # CSV logs & grid predictions
+│   ├── errors_sgd.csv
+│   ├── errors_sgd_es.csv
+│   ├── errors_sgd_wd.csv
+│   ├── errors_var.csv
+│   ├── errors_var_es.csv
+│   ├── errors_var_wd.csv
+│   ├── grid_predictions_SGD.csv
+│   ├── grid_predictions_SGDES.csv
+│   ├── grid_predictions_SGDWD.csv
+│   ├── grid_predictions_VLRGD.csv
+│   ├── grid_predictions_VLRGDES.csv
+│   ├── grid_predictions_VLRGDWD.csv
+│   ├── val_errors_sgd_es.csv
+│   ├── val_errors_var_es.csv
+│   └── (14 files)
+│
+├── exec/                           # Executables for training
+│   ├── train_digits
+│   ├── train_digits_early_stopping
+│   ├── train_digits_sgd
+│   ├── train_digits_sgd_early_stopping
+│   ├── train_digits_sgd_weight_decay
+│   └── train_digits_weight_decay
+│
+├── plots/                          # Visualizations
+│   ├── decision_boundary_sgd.png
+│   ├── decision_boundary_sgd_es.png
+│   ├── decision_boundary_sgd_wd.png
+│   ├── decision_boundary_var.png
+│   ├── decision_boundary_var_es.png
+│   ├── decision_boundary_var_wd.png
+│   ├── errors_sgd.png
+│   ├── errors_sgd_es.png
+│   ├── errors_sgd_wd.png
+│   ├── errors_var_lr_gd.png
+│   ├── errors_var_lr_gd_es.png
+│   ├── errors_var_lr_gd_wd.png
+│   └── (12 files)
+│
+└── src/                            # Core source code
+    ├── helper_functions.cpp
+    ├── layers.h
+    ├── main.cpp
+    ├── nn.h
+    ├── plot_decision_boundary.py
+    ├── plot_errors.py
+    ├── train_digits.cpp
+    ├── train_digits_early_stopping.cpp
+    ├── train_digits_sgd.cpp
+    ├── train_digits_sgd_early_stopping.cpp
+    ├── train_digits_sgd_weight_decay.cpp
+    ├── train_digits_weight_decay.cpp
+    ├── ZipDigitsRandom.test
+    └── ZipDigitsRandom.train
 '''
