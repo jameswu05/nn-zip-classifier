@@ -54,3 +54,36 @@ The data is stored in src, and each row of ZipDigitsRandom.test and ZipDigitsRan
     - Similarly utilized a training/validation split of 250 training, 50 validation
 ### Modularity
 The .h backend allows for adaptive selection of hidden-layer and last-layer activations and de-activations, number of iterations, and choice of regularization. Hyperparameters are not optimized so that is left to the user's discretion. 
+
+## Architecture
+-**Simple Two-Layer Gradient Descent**:
+  - 2 input nodes (symmetry and intensity)
+  - 1 output node (classification)
+  - tanh activation function on hidden layer
+  - identity transformation on output layer
+  - All weights initially set to 0.15
+
+For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 output node (classification), 1 hidden layer with 10 nodes, tanh activation function on hidden layer, and linear/sign transformation on output layer. Weights are randomly initialized then learned through backpropagation.
+
+-**VLR-GD**:
+  - No regularization or validation
+-**SGD**:
+  - No regularization or validation
+-**VLR-GD-WD**:
+  - Regularization parameter lambda set to 0.01 / N with N = size of training data
+  - Stopping criteria set to 1e-6
+-**SGD-WD**:
+  - Regularization parameter lambda set to 0.01 / N
+  - Initial epsilon-decay value set to 0.01
+-**VLR-GD-ES**:
+  - Training set of size 250, validation set of size 50
+  - Initial epsilon-decay value set to 0.01
+  - alpha = 1.05 (parameter to speed up gradient descent if weights are positively updated)
+  - beta = 0.7 (parameter to slow down gradient descent if weights are negatively downgraded or no change)
+  - Stopping criteria set to 1e-6
+  - Early Stopping max-number of iterations after hitting stopping criteria (patience) set to 100
+-**SGD-ES**:
+  - Training set of size 250, validation set of size 50
+  - Initial epsilon-decay value set to 0.01
+  - Stopping criteria set to 1e-6
+  - Early Stopping max-number of iterations after hitting stopping criteria (patience) set to 100
