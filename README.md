@@ -82,7 +82,7 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
   - beta = 0.7 (parameter to slow down gradient descent if weights are negatively downgraded or no change)
   - Stopping criteria set to 1e-6
   - Early Stopping max-number of iterations after hitting stopping criteria (patience) set to 100
--**SGD-ES**:
+- **SGD-ES**:
   - Training set of size 250, validation set of size 50
   - Initial epsilon-decay value set to 0.01
   - Stopping criteria set to 1e-6
