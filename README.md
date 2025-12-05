@@ -183,23 +183,38 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
 ## Methodology and Results
   - **VLR-GD**:
     - 2 million iterations
+    - Training Results:
+      ![Error Curve](plots/errors_var_lr_gd.png)
+      ![Decision Boundary](plots/decision_boundary_var.png)
     - Test Error = 1.85268%
   - **SGD**:
     - 20 million training updates
     - ~66,000 iterations
+    - Training Results:
+      ![Error Curve](plots/errors_sgd.png)
+      ![Decision Boundary](plots/decision_boundary_sgd.png)
     - Test Error = 1.44359%
   - **VLR-GD-WD**:
     - 2 million iterations
+    - Training Results:
+      ![Error Curve](plots/errors_var_lr_gd_wd.png)
+      ![Decision Boundary](plots/decision_boundary_var_wd.png)
     - Test Error = 1.28552%
   - **SGD-WD**:
     - 20 million training updates
     - ~66,000 iterations
+      ![Error Curve](plots/errors_sgd_wd.png)
+      ![Decision Boundary](plots/decision_boundary_sgd_wd.png)
     - Test Error = 1.40964%
   - **VLR-GD-ES**:
     - Early stopping triggered at iteration 491
     - Minimum Cross Validation Error = 2.67525%
+      ![Training and Validation Error Curves](plots/errors_var_lr_gd_es.png)
+      ![Decision Boundary](plots/decision_boundary_var_es.png)
     - Test Error = 1.70742%
   - **SGD-ES**:
     - Early stopping triggered at iteration 186000
     - Minimum Cross Validation Error = 3.40875%
+      ![Training and Validation Error Curves](plots/errors_sgd_es.png)
+      ![Decision Boundary](plots/decision_boundary_sgd_es.png)
     - Test Error = 1.49409%
