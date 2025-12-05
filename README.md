@@ -235,8 +235,5 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
 James Wu – [GitHub](https://github.com/jameswu05)
 
 ## References
-@misc{USPS_ZipDigits,
-  title        = {US Post Office Zip Code Data},
-  howpublished = {\url{https://hastie.su.domains/StatLearnSparsity_files/DATA/zipcode.html}},
-  note         = {7291 training + 2007 test images of 16×16 grayscale handwritten digits}
-}
+- **ZIP-Digits Dataset**: US Post Office Zip Code Data. Available from Stanford’s *Elements of Statistical Learning* website. Originally scanned handwritten digits normalized to 16×16 grayscale images. 7291 training and 2007 test samples.  
+  [https://hastie.su.domains/StatLearnSparsity_files/DATA/zipcode.html](https://hastie.su.domains/StatLearnSparsity_files/DATA/zipcode.html)
