@@ -230,3 +230,13 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
       <img src="plots/decision_boundary_sgd_es.png" alt="Decision Boundary" width="300" />
     </p>
     - Test Error = 1.49409%
+
+## Author
+James Wu – [GitHub](https://github.com/jameswu05)
+
+## References
+@misc{USPS_ZipDigits,
+  title        = {US Post Office Zip Code Data},
+  howpublished = {\url{https://hastie.su.domains/StatLearnSparsity_files/DATA/zipcode.html}},
+  note         = {7291 training + 2007 test images of 16×16 grayscale handwritten digits}
+}
