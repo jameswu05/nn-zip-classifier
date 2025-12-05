@@ -184,37 +184,49 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
   - **VLR-GD**:
     - 2 million iterations
     - Training Results:
-      ![Error Curve](plots/errors_var_lr_gd.png)
-      ![Decision Boundary](plots/decision_boundary_var.png)
+      <p float="left">
+        <img src="plots/errors_var_lr_gd.png" alt="Error Curve" width="300" />
+        <img src="plots/decision_boundary_var.png" alt="Decision Boundary" width="300" />
+      </p>
     - Test Error = 1.85268%
   - **SGD**:
     - 20 million training updates
     - ~66,000 iterations
     - Training Results:
-      ![Error Curve](plots/errors_sgd.png)
-      ![Decision Boundary](plots/decision_boundary_sgd.png)
+      <p float="left">
+        <img src="plots/errors_sgd.png" alt="Error Curve" width="300" />
+        <img src="plots/decision_boundary_sgd.png" alt="Decision Boundary" width="300" />
+      </p>
     - Test Error = 1.44359%
   - **VLR-GD-WD**:
     - 2 million iterations
     - Training Results:
-      ![Error Curve](plots/errors_var_lr_gd_wd.png)
-      ![Decision Boundary](plots/decision_boundary_var_wd.png)
+    <p float="left">
+      <img src="plots/errors_var_lr_gd_wd.png" alt="Error Curve" width="300" />
+      <img src="plots/decision_boundary_var_wd.png" alt="Decision Boundary" width="300" />
+    </p>
     - Test Error = 1.28552%
   - **SGD-WD**:
     - 20 million training updates
     - ~66,000 iterations
-      ![Error Curve](plots/errors_sgd_wd.png)
-      ![Decision Boundary](plots/decision_boundary_sgd_wd.png)
+    <p float="left">
+      <img src="plots/errors_sgd_wd.png" alt="Error Curve" width="300" />
+      <img src="plots/decision_boundary_sgd_wd.png" alt="Decision Boundary" width="300" />
+    </p>
     - Test Error = 1.40964%
   - **VLR-GD-ES**:
     - Early stopping triggered at iteration 491
     - Minimum Cross Validation Error = 2.67525%
-      ![Training and Validation Error Curves](plots/errors_var_lr_gd_es.png)
-      ![Decision Boundary](plots/decision_boundary_var_es.png)
+    <p float="left">
+      <img src="plots/errors_var_lr_gd_es.png" alt="Error Curve" width="300" />
+      <img src="plots/decision_boundary_var_es.png" alt="Decision Boundary" width="300" />
+    </p>
     - Test Error = 1.70742%
   - **SGD-ES**:
     - Early stopping triggered at iteration 186000
     - Minimum Cross Validation Error = 3.40875%
-      ![Training and Validation Error Curves](plots/errors_sgd_es.png)
-      ![Decision Boundary](plots/decision_boundary_sgd_es.png)
+    <p float="left">
+      <img src="plots/errors_sgd_es.png" alt="Error Curve" width="300" />
+      <img src="plots/decision_boundary_sgd_es.png" alt="Decision Boundary" width="300" />
+    </p>
     - Test Error = 1.49409%
