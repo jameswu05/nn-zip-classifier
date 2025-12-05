@@ -183,7 +183,7 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
 ## Methodology and Results
   - **VLR-GD**:
     - 2 million iterations
-   
+    - Test Error = 1.85268%
   - **SGD**:
     - 20 million training updates
     - ~66,000 iterations
