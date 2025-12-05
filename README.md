@@ -21,6 +21,7 @@ The primary purpose of this project was to develop a strong foundation in the th
   # navigate to source code folder
   cd src
 
+  # file_name = main (to run two-layer gradient descent)
   # file_name = train_digits (to run VLR-GD)
   # file_name = train_digits_sgd (to run SGD)
   # file_name = train_digits_weight_decay (to run VLR-GD-WD)
