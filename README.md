@@ -3,6 +3,97 @@ A mid-level neural network implementation from scratch on the MNIST Zip-Digits d
 
 The primary purpose of this project was to develop a strong foundation in the theory and implementation of neural networks and to compare the performance of different gradient descent algorithms on digit classification. Writing the codebase in C++ got me implement all of the math and algorithms manually from scratch. I utilized a modular design with a single layer class, a neural network driver class, and flexible user choice for between-layer activation. The results were plotted using Matplotlib and the Python frontend was called using std::system. All matrix operations were handled using the Eigen library in C++, which provided a comprehensive set of hyper-optimized functionalities for linear algebra purposes.
 
+## Getting Started
+### Prerequisites
+- **C++17 or later** (GCC, Clang, or MSVC)
+- **CMake** (optional)
+- **Eigen3.4+**
+- **Python3.11 + Matplotlib** (for plotting loss curves + decision boundaries)
+
+1. **Clone the Repository**:
+  ```
+  git clone https://github.com/jameswu05/nn-zip-classifier.git
+  cd nn-zip-classifier
+  ```
+2. **Ensure the correct Eigen path**
+3. **Compile and Run**:
+  ```
+  # navigate to source code folder
+  cd src
+
+  # file_name = train_digits (to run VLR-GD)
+  # file_name = train_digits_sgd (to run SGD)
+  # file_name = train_digits_weight_decay (to run VLR-GD-WD)
+  # file_name = train_digits_sgd_weight_decay (to run SGD-WD)
+  # file_name = train_digits_early_stopping (to run VLR-GD-ES)
+  # file_name = train_digits_sgd_early_stopping (to run SGD-ES)
+  g++ -std=c++17 [file_name].cpp -I /usr/include/eigen3 -O2 -o [exec_name]
+
+  # executables are stored in the exec folder
+  ./[exec_name]
+  ```
+
+## Directory Structure
+
+```
+project/
+├── data/                           # CSV logs & grid predictions
+│   ├── errors_sgd.csv
+│   ├── errors_sgd_es.csv
+│   ├── errors_sgd_wd.csv
+│   ├── errors_var.csv
+│   ├── errors_var_es.csv
+│   ├── errors_var_wd.csv
+│   ├── grid_predictions_SGD.csv
+│   ├── grid_predictions_SGDES.csv
+│   ├── grid_predictions_SGDWD.csv
+│   ├── grid_predictions_VLRGD.csv
+│   ├── grid_predictions_VLRGDES.csv
+│   ├── grid_predictions_VLRGDWD.csv
+│   ├── val_errors_sgd_es.csv
+│   ├── val_errors_var_es.csv
+│   └── (14 files)
+│
+├── exec/                           # Executables for training
+│   ├── train_digits
+│   ├── train_digits_early_stopping
+│   ├── train_digits_sgd
+│   ├── train_digits_sgd_early_stopping
+│   ├── train_digits_sgd_weight_decay
+│   └── train_digits_weight_decay
+│
+├── plots/                          # Visualizations
+│   ├── decision_boundary_sgd.png
+│   ├── decision_boundary_sgd_es.png
+│   ├── decision_boundary_sgd_wd.png
+│   ├── decision_boundary_var.png
+│   ├── decision_boundary_var_es.png
+│   ├── decision_boundary_var_wd.png
+│   ├── errors_sgd.png
+│   ├── errors_sgd_es.png
+│   ├── errors_sgd_wd.png
+│   ├── errors_var_lr_gd.png
+│   ├── errors_var_lr_gd_es.png
+│   ├── errors_var_lr_gd_wd.png
+│   └── (12 files)
+│
+└── src/                            # Core source code
+    ├── helper_functions.cpp
+    ├── layers.h
+    ├── main.cpp
+    ├── nn.h
+    ├── plot_decision_boundary.py
+    ├── plot_errors.py
+    ├── train_digits.cpp
+    ├── train_digits_early_stopping.cpp
+    ├── train_digits_sgd.cpp
+    ├── train_digits_sgd_early_stopping.cpp
+    ├── train_digits_sgd_weight_decay.cpp
+    ├── train_digits_weight_decay.cpp
+    ├── ZipDigitsRandom.test
+    └── ZipDigitsRandom.train
+```
+
 ## Dataset
 The US Post Office Zip Code data is used for all digits classification, 0-9. The original dataset consists of 7291 training images and 2007 test images, each 16x16 grayscale, and was developed by Yann LeCun at AT&T Research Labs. This project deals with classifying all images with label = 1 vs. all images with label != 1. The dataset has been pre-processed, with each entry consisting of two extracted features - intensity and symmetry. Following pre-processing, I utilized 300 images for training and 8998 for testing.
 
@@ -87,64 +178,3 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
   - Initial epsilon-decay value set to 0.01
   - Stopping criteria set to 1e-6
   - Early Stopping max-number of iterations after hitting stopping criteria (patience) set to 100
-
-## Directory Structure
-
-```
-project/
-├── data/                           # CSV logs & grid predictions
-│   ├── errors_sgd.csv
-│   ├── errors_sgd_es.csv
-│   ├── errors_sgd_wd.csv
-│   ├── errors_var.csv
-│   ├── errors_var_es.csv
-│   ├── errors_var_wd.csv
-│   ├── grid_predictions_SGD.csv
-│   ├── grid_predictions_SGDES.csv
-│   ├── grid_predictions_SGDWD.csv
-│   ├── grid_predictions_VLRGD.csv
-│   ├── grid_predictions_VLRGDES.csv
-│   ├── grid_predictions_VLRGDWD.csv
-│   ├── val_errors_sgd_es.csv
-│   ├── val_errors_var_es.csv
-│   └── (14 files)
-│
-├── exec/                           # Executables for training
-│   ├── train_digits
-│   ├── train_digits_early_stopping
-│   ├── train_digits_sgd
-│   ├── train_digits_sgd_early_stopping
-│   ├── train_digits_sgd_weight_decay
-│   └── train_digits_weight_decay
-│
-├── plots/                          # Visualizations
-│   ├── decision_boundary_sgd.png
-│   ├── decision_boundary_sgd_es.png
-│   ├── decision_boundary_sgd_wd.png
-│   ├── decision_boundary_var.png
-│   ├── decision_boundary_var_es.png
-│   ├── decision_boundary_var_wd.png
-│   ├── errors_sgd.png
-│   ├── errors_sgd_es.png
-│   ├── errors_sgd_wd.png
-│   ├── errors_var_lr_gd.png
-│   ├── errors_var_lr_gd_es.png
-│   ├── errors_var_lr_gd_wd.png
-│   └── (12 files)
-│
-└── src/                            # Core source code
-    ├── helper_functions.cpp
-    ├── layers.h
-    ├── main.cpp
-    ├── nn.h
-    ├── plot_decision_boundary.py
-    ├── plot_errors.py
-    ├── train_digits.cpp
-    ├── train_digits_early_stopping.cpp
-    ├── train_digits_sgd.cpp
-    ├── train_digits_sgd_early_stopping.cpp
-    ├── train_digits_sgd_weight_decay.cpp
-    ├── train_digits_weight_decay.cpp
-    ├── ZipDigitsRandom.test
-    └── ZipDigitsRandom.train
-```
