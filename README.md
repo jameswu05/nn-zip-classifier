@@ -34,7 +34,7 @@ The primary purpose of this project was to develop a strong foundation in the th
   ./[exec_name]
   ```
 
-## Directory Structure
+### Directory Structure
 
 ```
 project/
@@ -136,8 +136,8 @@ The data is stored in src, and each row of ZipDigitsRandom.test and ZipDigitsRan
   - identity (FP only) and identity derivative (BP only)
   - sign (FP only) and sign derivative (BP only)
 - **Gradient Descent Algorithms**:
-  - Variable Learning Rate Gradient Descent (VLR-GD): 2 million iterations
-  - Stochastic Gradient Descent (SGD): 20 million SGD updates
+  - Variable Learning Rate Gradient Descent (VLR-GD)
+  - Stochastic Gradient Descent (SGD)
   - Variable Learning Rate Gradient Descent with Weight Decay Regularization (VLR-GD-WD)
   - Stochastic Gradient Descent with Weight Decay Regularization (SGD-WD)
   - Variable Learning Rate Gradient Descent with Early Stopping Regularization
@@ -179,3 +179,27 @@ For all below methods, I utilize 2 input nodes (symmetry and intensity), 1 outpu
   - Initial epsilon-decay value set to 0.01
   - Stopping criteria set to 1e-6
   - Early Stopping max-number of iterations after hitting stopping criteria (patience) set to 100
+
+## Methodology and Results
+  - **VLR-GD**:
+    - 2 million iterations
+   
+  - **SGD**:
+    - 20 million training updates
+    - ~66,000 iterations
+    - Test Error = 1.44359%
+  - **VLR-GD-WD**:
+    - 2 million iterations
+    - Test Error = 1.28552%
+  - **SGD-WD**:
+    - 20 million training updates
+    - ~66,000 iterations
+    - Test Error = 1.40964%
+  - **VLR-GD-ES**:
+    - Early stopping triggered at iteration 491
+    - Minimum Cross Validation Error = 2.67525%
+    - Test Error = 1.70742%
+  - **SGD-ES**:
+    - Early stopping triggered at iteration 186000
+    - Minimum Cross Validation Error = 3.40875%
+    - Test Error = 1.49409%
