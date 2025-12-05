@@ -18,8 +18,8 @@ int main() {
     std::vector<Eigen::VectorXd> X_val, y_val;
     std::vector<Eigen::VectorXd> X_test, y_test;
 
-    load_data("zipDigitsRandom.train", X, y);
-    load_data("zipDigitsRandom.test", X_test, y_test);
+    load_data("../src/zipDigitsRandom.train", X, y);
+    load_data("../src/zipDigitsRandom.test", X_test, y_test);
 
     split_training_validation(
         X, y,
@@ -73,21 +73,21 @@ int main() {
 
     std::cout << "Finished training.\n" << std::endl;
 
-    std::ofstream fout("errors_var_es.csv");
+    std::ofstream fout("../data/errors_var_es.csv");
     for (size_t i = 0; i < errors.size(); i++) {
         fout << i << "," << errors[i] << "\n";
     }
     fout.close();
 
-    std::cout << "Errors saved to errors_var_es.csv." << std::endl;
+    std::cout << "Errors saved to data/errors_var_es.csv." << std::endl;
 
-    std::ofstream f_out("val_errors_var_es.csv");
+    std::ofstream f_out("../data/val_errors_var_es.csv");
     for (size_t i = 0; i < val_errors.size(); i++) {
         f_out << i << "," << val_errors[i] << "\n";
     }
     f_out.close();
 
-    std::cout << "Errors saved to val_errors_var_es.csv" << std::endl;
+    std::cout << "Errors saved to data/val_errors_var_es.csv" << std::endl;
     
     plot_errors_from_csv(
         "errors_var_es.csv", 
@@ -96,18 +96,18 @@ int main() {
         "Variable-LR GD with Early Stopping",
         "val_errors_var_es.csv"
     );
-    std::cout << "Errors saved to errors_var_lr_gd_es.png." << std::endl;
+    std::cout << "Errors saved to data/errors_var_lr_gd_es.png." << std::endl;
 
     plot_decision_boundary_from_NN(
         network,
         X_train,
-        "zipDigitsRandom.train",
-        "grid_predictions_VLRGDES.csv",
-        "plot_decision_boundary.py",
-        "decision_boundary_var_es.png",
+        "../src/zipDigitsRandom.train",
+        "../data/grid_predictions_VLRGDES.csv",
+        "../src/plot_decision_boundary.py",
+        "../plots/decision_boundary_var_es.png",
         "Variable-LR GD with Early Stopping"
     );
-    std::cout << "Decision boundary saved to decision_boundary_var_es.png." << std::endl;
+    std::cout << "Decision boundary saved to plots/decision_boundary_var_es.png." << std::endl;
 
     double test_error = network.test_error(
         X_test,

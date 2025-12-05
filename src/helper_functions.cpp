@@ -138,9 +138,14 @@ void plot_errors_from_csv(
     const std::string& val_csv_file = ""
 ) {
     std::string quoted_title = "\"" + plot_title + "\"";
-    std::string command = "python3.11 " + python_script + " " + csv_file + " " + output_file + " " + quoted_title;
+    std::string command = 
+        "python3.11 ../src/" + python_script + " " +
+        "../data/" + csv_file + " " +
+        "../plots/" + output_file + " " +
+        quoted_title;
+
     if (!val_csv_file.empty()) {
-        command += " " + val_csv_file;
+        command += " ../data/" + val_csv_file;
     }
     
     std::cout << "Running command: " << command << std::endl;

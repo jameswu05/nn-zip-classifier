@@ -16,8 +16,8 @@ int main() {
     std::vector<Eigen::VectorXd> X_train, y_train;
     std::vector<Eigen::VectorXd> X_test, y_test;
 
-    load_data("zipDigitsRandom.train", X_train, y_train);
-    load_data("zipDigitsRandom.test", X_test, y_test);
+    load_data("../src/zipDigitsRandom.train", X_train, y_train);
+    load_data("../src/zipDigitsRandom.test", X_test, y_test);
 
     std::cout << "Training samples: " << X_train.size() << std::endl;
     std::cout << "Testing samples: " << X_test.size() << std::endl;
@@ -65,31 +65,31 @@ int main() {
 
     std::cout << "Finished training.\n" << std::endl;
 
-    std::ofstream fout("errors_var.csv");
+    std::ofstream fout("../data/errors_var.csv");
     for (size_t i = 0; i < errors.size(); i++) {
         fout << i << "," << errors[i] << "\n";
     }
     fout.close();
 
-    std::cout << "Errors saved to errors_var.csv." << std::endl;
+    std::cout << "Errors saved to data/errors_var.csv." << std::endl;
     plot_errors_from_csv(
         "errors_var.csv", 
         "errors_var_lr_gd.png",
         "plot_errors.py",
         "Variable-LR Gradient Descent"
     );
-    std::cout << "Errors saved to errors_var_lr_gd.png." << std::endl;
+    std::cout << "Errors saved to plots/errors_var_lr_gd.png." << std::endl;
 
     plot_decision_boundary_from_NN(
         network,
         X_train,
-        "zipDigitsRandom.train",
-        "grid_predictions_VLRGD.csv",
-        "plot_decision_boundary.py",
-        "decision_boundary_var.png",
+        "../src/zipDigitsRandom.train",
+        "../data/grid_predictions_VLRGD.csv",
+        "../src/plot_decision_boundary.py",
+        "../plots/decision_boundary_var.png",
         "Variable-LR Gradient Descent"
     );
-    std::cout << "Decision boundary saved to decision_boundary_var.png." << std::endl;
+    std::cout << "Decision boundary saved to plots/decision_boundary_var.png." << std::endl;
 
     double test_error = network.test_error(
         X_test,
